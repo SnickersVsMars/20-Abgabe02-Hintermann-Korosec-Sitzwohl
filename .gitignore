@@ -1,3 +1,14 @@
+# IntelliJ project files
+*.iml
+/.idea
+
+# Temp output files 
+out
+target
+
+# Default documentation folder
+docs
+
 # Compiled class file
 *.class
 

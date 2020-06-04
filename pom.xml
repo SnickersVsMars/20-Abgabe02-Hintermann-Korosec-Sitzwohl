@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>at.fhj.iit</groupId>
+  <artifactId>Queue</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>Queue</name>
+  <url>https://github.com/michaelulm/software-configuration-management/tree/master/test-automation/junit5/Queue</url>
+
+  <developers>
+    <developer>
+      <id>fly8899</id>
+      <name>Tobias Hintermann</name>
+      <email>tobias.hintermann@edu.fh-joanneum.at</email>
+      <url>https://github.com/fly8899</url>
+      <organization>FH JOANNEUM GmbH</organization>
+      <organizationUrl>https://www.fh-joanneum.at/mobile-software-development/bachelor</organizationUrl>
+      <roles>
+        <role>Student/Developer</role>
+      </roles>
+      <timezone>Europe/Vienna</timezone>
+    </developer>
+    <developer>
+      <id>m4rien0</id>
+      <name>Marian Korošec</name>
+      <email>marian.korosec@edu.fh-joanneum.at</email>
+      <url>https://github.com/m4rien0</url>
+      <organization>FH JOANNEUM GmbH</organization>
+      <organizationUrl>https://www.fh-joanneum.at/mobile-software-development/bachelor</organizationUrl>
+      <roles>
+        <role>Student/Developer</role>
+      </roles>
+      <timezone>Europe/Vienna</timezone>
+    </developer>
+    <developer>
+      <id>sitcha07</id>
+      <name>Christian Sitzwohl</name>
+      <email>christian.sitzwohl@edu.fh-joanneum.at</email>
+      <url>https://github.com/sitcha07</url>
+      <organization>FH JOANNEUM GmbH</organization>
+      <organizationUrl>https://www.fh-joanneum.at/mobile-software-development/bachelor</organizationUrl>
+      <roles>
+        <role>Student/Developer</role>
+      </roles>
+      <timezone>Europe/Vienna</timezone>
+      <properties/>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.comiler.release>11</maven.comiler.release>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.6.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.6.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>5.6.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.1</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
