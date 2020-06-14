@@ -1,14 +1,14 @@
 package at.fhj.msd;
 
-public interface IQueue {
+public interface IQueue<T> {
   /**
    * Adds the element obj to the queue.
    * If the addition is successful, the method returns true else false.
    *
-   * @param string that should be added to the queue
+   * @param T that should be added to the queue
    * @return true if the addition is successful - else false
    */
-  public abstract boolean offer(String obj);
+  public abstract boolean offer(T obj);
 
   /**
    * Returns the head (first) element and also deletes it. That is, we cannot get it again.
@@ -16,7 +16,7 @@ public interface IQueue {
    *
    * @return head element of the queue
    */
-  public abstract String poll();
+  public abstract T poll();
 
   /**
    * It also returns and deletes the head element like poll(), but with a small difference.
@@ -24,7 +24,7 @@ public interface IQueue {
    *
    * @return head element of the queue
    */
-  public abstract String remove();
+  public abstract T remove();
 
   /**
    * Returns the head element but it does not delete it. That is, we can get it again.
@@ -32,7 +32,7 @@ public interface IQueue {
    *
    * @return head element of the queue
    */
-  public abstract String peek();
+  public abstract T peek();
 
   /**
    * It works similar to peek() but with a small difference (returns but does not delete the element).
@@ -40,5 +40,5 @@ public interface IQueue {
    *
    * @return head element of the queue
    */
-  public abstract String element();
+  public abstract T element();
 }

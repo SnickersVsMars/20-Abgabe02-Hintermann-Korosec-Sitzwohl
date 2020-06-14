@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 // write Test-Cases (read Queue Interface for understanding methods) and use Debugging possibilies of your IDE
 // TODO: Javadoc + find bugs (tests + debugging)
 
-public class StringQueue implements IQueue {
+public class StringQueue implements IQueue<String> {
 
   private List<String> elements = new ArrayList<String>();
   // Bug 1: max size assigned here and then again to itself
