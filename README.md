@@ -27,7 +27,7 @@ These following points were/will be handled during this assignment (subject to c
 - [x] General description in Readme
 - [x] Task list in Readme
 - [x] Edit pom.xml meta infos
-- [ ] Fix implementation issues in template 
+- [x] Fix implementation issues in template 
 - [ ] Add queue implementation with generics
 - [ ] Test string implementation
 - [ ] Test generics implementation
