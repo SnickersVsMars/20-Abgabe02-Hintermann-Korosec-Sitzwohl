@@ -73,8 +73,4 @@ public class StringQueue implements IQueue<String> {
 
     return element;
   }
-
-  public List<String> getElements() {
-    return elements;
-  }
 }

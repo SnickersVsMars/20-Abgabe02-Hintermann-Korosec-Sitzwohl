@@ -60,8 +60,4 @@ public class Queue<T> implements IQueue<T> {
 
         return element;
     }
-
-    public List<T> getElements() {
-        return elements;
-    }
 }
