@@ -11,10 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Testing Queues with string implementation")
 public class StringQueueTest {
     private StringQueue sq;
+    private StringQueue sqLarge;
 
     @BeforeEach
     public void setup() {
         sq = new StringQueue(1);
+        sqLarge = new StringQueue(5);
     }
 
     @Test
@@ -98,5 +100,74 @@ public class StringQueueTest {
             sq.remove();
         });
     }
-   // TODO Write your own tests
+
+
+    @Test
+    @DisplayName("Testing peek method with empty queue")
+    public void testPeekEmptyQueue() {
+        String element = sq.peek();
+        assertNull(element, "Expected head to be null but was " + element);
+    }
+
+    @Test
+    @DisplayName("Testing peek method multiple times combined with remove")
+    public void testPeekWithRemove() {
+        sqLarge.offer("1");
+        sqLarge.offer("2");
+        String result1 = sqLarge.peek();
+        String result2 = sqLarge.peek();
+
+        assertEquals("1", result2,
+                "Expected head to be \"1\" but was " + result2);
+
+        assertEquals("1", result1,
+                "Expected head to be \"1\" but was " + result1);
+
+        sqLarge.remove();
+
+        String result3 = sqLarge.peek();
+        String result4 = sqLarge.peek();
+
+        assertEquals("2", result3,
+                "Expected head to be \"2\" but was " + result3);
+
+        assertEquals("2", result4,
+                "Expected head to be \"2\" but was " + result4);
+
+        sqLarge.remove();
+
+        String element = sqLarge.peek();
+        assertNull(element, "Expected head to be null but was " + element);
+    }
+
+    @Test
+    @DisplayName("Testing element method multiple times combined with remove")
+    public void testElementWithRemove() {
+       sqLarge.offer("1");
+       sqLarge.offer("2");
+       String result1 = sqLarge.element();
+       String result2 = sqLarge.element();
+
+       assertEquals("1", result2,
+               "Expected head to be \"1\" but was " + result2);
+
+       assertEquals("1", result1,
+               "Expected head to be \"1\" but was " + result1);
+
+        sqLarge.remove();
+
+        String result3 = sqLarge.element();
+        String result4 = sqLarge.element();
+
+        assertEquals("2", result3,
+                "Expected head to be \"2\" but was " + result3);
+
+        assertEquals("2", result4,
+                "Expected head to be \"2\" but was " + result4);
+
+        sqLarge.remove();
+        assertThrows(NoSuchElementException.class, () -> {
+            sqLarge.element();
+        });
+    }
 }

@@ -28,8 +28,8 @@ These following points were/will be handled during this assignment (subject to c
 - [x] Task list in Readme
 - [x] Edit pom.xml meta infos
 - [x] Fix implementation issues in template 
-- [ ] Add queue implementation with generics
-- [ ] Test string implementation
+- [x] Add queue implementation with generics
+- [x] Test string implementation
 - [ ] Test generics implementation
 - [ ] Create site documentation using Maven
 
