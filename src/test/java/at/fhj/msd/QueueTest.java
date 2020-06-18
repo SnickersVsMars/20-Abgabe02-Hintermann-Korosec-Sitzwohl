@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class QueueTest {
@@ -17,7 +19,7 @@ class QueueTest {
 
     @Test
     @DisplayName("Testing if maximum works properly")
-    void offerMaximumReached() {
+    void testOfferMaximumReached() {
         queue.offer("one");
         queue.offer("two");
         queue.offer("three");
@@ -26,14 +28,14 @@ class QueueTest {
 
     @Test
     @DisplayName("Testing if adding works properly")
-    void offerSimpleAdd() {
+    void testOfferSimpleAdd() {
         queue.offer("one");
         assertEquals(true,queue.offer("two"));
     }
 
     @Test
     @DisplayName("Testing if polling an element works properly")
-    void pollSimpleRemove() {
+    void testSimplePoll() {
         queue.offer("one");
         queue.offer("two");
         queue.poll();
@@ -42,22 +44,34 @@ class QueueTest {
 
     @Test
     @DisplayName("Testing if polling works properly when size 0")
-    void pollRemoveButNoElement() {
+    void testPollButNoElement() {
         assertNull(queue.poll());
     }
 
     @Test
-    @DisplayName("")
-    void remove() {
+    @DisplayName("Remove when null to throw NoSuchElementException")
+    void testRemoveWhenNull() {
+        assertThrows(NoSuchElementException.class, () -> {
+            queue.remove();
+        });
+    }
+
+    @Test
+    @DisplayName("Remove element from queue")
+    void testRemoveWhenNotNull() {
+        queue.offer("one");
+        queue.offer("two");
+        queue.remove();
+        assertEquals("two",queue.peek());
     }
 
     @Test
     @DisplayName("")
-    void peek() {
+    void testPeek() {
     }
 
     @Test
     @DisplayName("")
-    void element() {
+    void testElement() {
     }
 }
