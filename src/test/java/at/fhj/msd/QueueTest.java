@@ -32,8 +32,18 @@ class QueueTest {
     }
 
     @Test
-    @DisplayName("")
-    void poll() {
+    @DisplayName("Testing if polling an element works properly")
+    void pollSimpleRemove() {
+        queue.offer("one");
+        queue.offer("two");
+        queue.poll();
+        assertEquals("two",queue.peek());
+    }
+
+    @Test
+    @DisplayName("Testing if polling works properly when size 0")
+    void pollRemoveButNoElement() {
+        assertNull(queue.poll());
     }
 
     @Test
