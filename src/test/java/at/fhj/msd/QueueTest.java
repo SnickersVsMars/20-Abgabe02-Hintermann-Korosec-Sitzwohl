@@ -8,7 +8,8 @@ import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QueueTest {
+@DisplayName("Testing Queue with generics implementation")
+public class QueueTest {
 
     private Queue queue;
 

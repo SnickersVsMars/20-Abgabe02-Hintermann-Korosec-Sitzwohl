@@ -4,12 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-
+/**
+ * Class represents a queue containing any given object
+ *
+ * @author      Christian Sitzwohl
+ * @version     %I%, %G%
+ * @since       1.1
+ */
 public class Queue<T> implements IQueue<T> {
 
+    /**
+     * elements in the queue
+     */
     private List<T> elements = new ArrayList<T>();
+    /**
+     * maximum amount of elements in the queue
+     */
     private int maxSize;
 
+    /**
+     * Creates a new Queue object with a given maximum size
+     *
+     * @param maxSize maximum amount of elements in the queue
+     */
     public Queue(int maxSize) {
         this.maxSize = maxSize;
     }

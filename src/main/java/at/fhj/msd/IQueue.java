@@ -1,11 +1,20 @@
 package at.fhj.msd;
 
+/**
+ * Interface containing the essential queue methods.
+ *
+ * @author      Michael Ulm
+ * @author      Christian Sitzwohl
+ * @version     %I%, %G%
+ * @since       1.0
+ */
 public interface IQueue<T> {
   /**
    * Adds the element obj to the queue.
    * If the addition is successful, the method returns true else false.
    *
-   * @param T that should be added to the queue
+   * @param obj that should be added to the queue
+   *
    * @return true if the addition is successful - else false
    */
   boolean offer(T obj);

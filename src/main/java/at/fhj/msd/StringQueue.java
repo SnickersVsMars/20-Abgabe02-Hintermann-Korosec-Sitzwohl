@@ -4,18 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-// there's some Bugs included, try to debug the code and fix the Bugs
-// there are different Bugs, wrong implementation, typos, ...
-// write Test-Cases (read Queue Interface for understanding methods) and use Debugging possibilies of your IDE
-// TODO: Javadoc + find bugs (tests + debugging)
-
+/**
+ * Class represents a queue containing only string objects
+ *
+ * @author      Michael Ulm
+ * @author      Marian Korosec
+ * @version     %I%, %G%
+ * @since       1.0
+ */
 public class StringQueue implements IQueue<String> {
 
-  private List<String> elements = new ArrayList<String>();
+  /**
+   * elements in the queue
+   */
+  private List<String> elements = new ArrayList<>();
   // Bug 1: max size assigned here and then again to itself
   // in the constructor, constructor parameter not used
+  /**
+   * maximum amount of elements in the queue
+   */
   private int maxSize;
 
+  /**
+   * Creates a new Queue object with a given maximum size
+   *
+   * @param maxSize maximum amount of elements in the queue
+   */
   public StringQueue(int maxSize) {
     this.maxSize = maxSize;
   }
