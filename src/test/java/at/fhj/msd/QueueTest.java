@@ -67,12 +67,37 @@ public class QueueTest {
     }
 
     @Test
-    @DisplayName("")
-    void testPeek() {
+    @DisplayName("Testing returned element of remove()")
+    void testReturnedRemoveElement() {
+        queue.offer("one");
+        assertEquals("one",queue.remove());
     }
 
     @Test
-    @DisplayName("")
-    void testElement() {
+    @DisplayName("Testing peek() with element in queue")
+    void testPeekWithElement() {
+        queue.offer("one");
+        assertEquals("one",queue.peek());
+    }
+
+    @Test
+    @DisplayName("Testing peek() with no element")
+    void testPeekNoElement() {
+        assertEquals(null,queue.peek());
+    }
+
+    @Test
+    @DisplayName("Testing element() with elements in queue")
+    void testElementWithElement() {
+        queue.offer("one");
+        assertEquals("one", queue.element());
+    }
+
+    @Test
+    @DisplayName("Testing element() with no elements in queue")
+    void testElementException() {
+            assertThrows(NoSuchElementException.class, () -> {
+                queue.element();
+            });
     }
 }
