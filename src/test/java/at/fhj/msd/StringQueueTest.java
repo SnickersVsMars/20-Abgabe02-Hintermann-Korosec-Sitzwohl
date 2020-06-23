@@ -58,7 +58,7 @@ public class StringQueueTest {
     public void testPollEmptyQueue() {
         String result = sqSm.poll();
 
-        assertNull(result);
+        assertNull(result, "Expected head of empty queue to be null");
     }
 
     @Test
