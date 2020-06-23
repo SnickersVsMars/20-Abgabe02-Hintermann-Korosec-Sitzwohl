@@ -24,14 +24,14 @@ public class QueueTest {
         queue.offer("one");
         queue.offer("two");
         queue.offer("three");
-        assertEquals(false,queue.offer("four"));
+        assertEquals(false,queue.offer("four"), "Expected \"false\" but element got added!");
     }
 
     @Test
     @DisplayName("Testing if adding works properly")
     void testOfferSimpleAdd() {
         queue.offer("one");
-        assertEquals(true,queue.offer("two"));
+        assertEquals(true,queue.offer("two"), "Expected \"true\" but element was not added!");
     }
 
     @Test
