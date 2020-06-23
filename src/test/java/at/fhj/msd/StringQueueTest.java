@@ -37,20 +37,19 @@ public class StringQueueTest {
     @Test
     @DisplayName("Testing that poll returns and removes the head of the queue")
     public void testPollReturnsAndRemovesHead() {
-        String result = "";
         String testString1 = "Test1";
         String testString2 = "Test2";
 
         sqLg.offer(testString1);
         sqLg.offer(testString2);
 
-        result = sqLg.poll();
-        assertEquals(testString1, result,
-                "Expected head to be \"" + testString1 + "\" but was " + result);
+        String result1 = sqLg.poll();
+        String result2 = sqLg.poll();
 
-        result = sqLg.poll();
-        assertEquals(testString2, result,
-                "Expected head to be \"" + testString2 + "\" but was " + result);
+        assertEquals(testString1, result1,
+                "Expected head to be \"" + testString1 + "\" but was " + result1);
+        assertEquals(testString2, result2,
+                "Expected head to be \"" + testString2 + "\" but was " + result2);
     }
 
     @Test
@@ -64,20 +63,19 @@ public class StringQueueTest {
     @Test
     @DisplayName("Testing that remove returns and removes the head of the queue")
     public void testRemoveReturnsAndRemovesHead() {
-        String result = "";
         String testString1 = "Test1";
         String testString2 = "Test2";
 
         sqLg.offer(testString1);
         sqLg.offer(testString2);
 
-        result = sqLg.remove();
-        assertEquals(testString1, result,
-                "Expected head to be \"" + testString1 + "\" but was " + result);
+        String result1 = sqLg.remove();
+        String result2 = sqLg.remove();
 
-        result = sqLg.remove();
-        assertEquals(testString2, result,
-                "Expected head to be \"" + testString2 + "\" but was " + result);
+        assertEquals(testString1, result1,
+                "Expected head to be \"" + testString1 + "\" but was " + result1);
+        assertEquals(testString2, result2,
+                "Expected head to be \"" + testString2 + "\" but was " + result2);
     }
 
     @Test
@@ -101,27 +99,27 @@ public class StringQueueTest {
     public void testPeekWithRemove() {
         sqLg.offer("1");
         sqLg.offer("2");
-        String result1 = sqLg.peek();
-        String result2 = sqLg.peek();
-
-        assertEquals("1", result2,
-                "Expected head to be \"1\" but was " + result2);
-
-        assertEquals("1", result1,
-                "Expected head to be \"1\" but was " + result1);
-
-        sqLg.remove();
-
-        String result3 = sqLg.peek();
-        String result4 = sqLg.peek();
+        sqLg.peek(); //should have no effect
+        sqLg.remove(); //remove first entry
+        String result3 = sqLg.peek(); //get second entry - but should have no effect to queue
+        String result4 = sqLg.peek(); //get second entry
 
         assertEquals("2", result3,
                 "Expected head to be \"2\" but was " + result3);
 
         assertEquals("2", result4,
                 "Expected head to be \"2\" but was " + result4);
+    }
 
-        sqLg.remove();
+    @Test
+    @DisplayName("Testing peek method multiple times combined with multiple remove")
+    public void testPeekWithRemoveMultiple() {
+        sqLg.offer("1");
+        sqLg.offer("2");
+        sqLg.peek(); //should have no effect
+        sqLg.remove(); //remove first entry
+        sqLg.peek(); //should have no effect
+        sqLg.remove(); //remove second entry
 
         String element = sqLg.peek();
         assertNull(element, "Expected head to be null but was " + element);
@@ -130,31 +128,31 @@ public class StringQueueTest {
     @Test
     @DisplayName("Testing element method multiple times combined with remove")
     public void testElementWithRemove() {
-       sqLg.offer("1");
-       sqLg.offer("2");
-       String result1 = sqLg.element();
-       String result2 = sqLg.element();
-
-       assertEquals("1", result2,
-               "Expected head to be \"1\" but was " + result2);
-
-       assertEquals("1", result1,
-               "Expected head to be \"1\" but was " + result1);
-
-        sqLg.remove();
-
-        String result3 = sqLg.element();
-        String result4 = sqLg.element();
+        sqLg.offer("1");
+        sqLg.offer("2");
+        sqLg.element(); //should have no effect
+        sqLg.remove(); //remove first entry
+        String result3 = sqLg.element(); //get second entry - but should have no effect to queue
+        String result4 = sqLg.element(); //get second entry
 
         assertEquals("2", result3,
                 "Expected head to be \"2\" but was " + result3);
 
         assertEquals("2", result4,
                 "Expected head to be \"2\" but was " + result4);
+    }
 
-        sqLg.remove();
+    @Test
+    @DisplayName("Testing element method multiple times combined with multiple removes")
+    public void testElementWithMultipleRemove() {
+        sqLg.offer("1");
+        sqLg.offer("2");
+        sqLg.element(); //should have no effect
+        sqLg.remove(); //remove first entry
+        sqLg.element(); //should have no effect
+        sqLg.remove(); //remove second entry
         assertThrows(NoSuchElementException.class, () -> {
-            sqLg.element();
+            sqLg.element(); //Queue should be empty
         });
     }
 }
