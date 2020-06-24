@@ -83,7 +83,7 @@ public class StringQueueTest {
     public void testRemoveEmptyQueue() {
         assertThrows(NoSuchElementException.class, () -> {
             sqSm.remove();
-        });
+        }, "Expected to throw \"NoSuchElementException\"!");
     }
 
 
@@ -153,6 +153,6 @@ public class StringQueueTest {
         sqLg.remove(); //remove second entry
         assertThrows(NoSuchElementException.class, () -> {
             sqLg.element(); //Queue should be empty
-        });
+        }, "Expected to throw \"NoSuchElementException\"!");
     }
 }
