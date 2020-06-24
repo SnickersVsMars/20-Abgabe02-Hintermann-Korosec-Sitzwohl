@@ -1,4 +1,4 @@
-package at.fhj.msd;
+package at.fhj.msd.queue;
 
 /**
  * Interface containing the essential queue methods.
