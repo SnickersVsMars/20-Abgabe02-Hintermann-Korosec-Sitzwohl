@@ -1,4 +1,4 @@
-package at.fhj.msd;
+package at.fhj.msd.queue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

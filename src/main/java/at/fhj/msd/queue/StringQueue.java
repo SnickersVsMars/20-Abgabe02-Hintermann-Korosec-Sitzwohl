@@ -1,4 +1,4 @@
-package at.fhj.msd;
+package at.fhj.msd.queue;
 
 import java.util.ArrayList;
 import java.util.List;
