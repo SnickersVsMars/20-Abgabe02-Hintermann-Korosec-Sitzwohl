@@ -11,11 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Testing Queue with generics implementation")
 public class QueueTest {
 
-    private Queue queue;
+    private Queue<String> queue;
 
     @BeforeEach
     void setUp() {
-        queue = new Queue(3);
+        queue = new Queue<String>(3);
     }
 
     @Test
