@@ -17,7 +17,7 @@ public class StringQueue implements IQueue<String> {
   /**
    * elements in the queue
    */
-  private List<String> elements = new ArrayList<>();
+  private List<String> elements = new ArrayList<String>();
   // Bug 1: max size assigned here and then again to itself
   // in the constructor, constructor parameter not used
   /**
