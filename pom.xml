@@ -26,7 +26,7 @@
       <timezone>Europe/Vienna</timezone>
       <properties>
         <picUrl>
-          https://github.com/SnickersVsMars/20-Abgabe02-Hintermann-Korosec-Sitzwohl/blob/master/assets/fly8899.jpg?raw=true
+          images/fly8899.jpg
         </picUrl>
       </properties>
     </developer>
@@ -44,7 +44,7 @@
       <timezone>Europe/Vienna</timezone>
       <properties>
         <picUrl>
-          https://github.com/SnickersVsMars/20-Abgabe02-Hintermann-Korosec-Sitzwohl/blob/master/assets/m4rien0.jpg?raw=true
+          images/m4rien0.jpg
         </picUrl>
       </properties>
     </developer>
@@ -62,7 +62,7 @@
       <timezone>Europe/Vienna</timezone>
       <properties>
         <picUrl>
-          https://github.com/SnickersVsMars/20-Abgabe02-Hintermann-Korosec-Sitzwohl/blob/master/assets/sitcha07.jpg?raw=true
+          images/sitcha07.jpg
         </picUrl>
       </properties>
     </developer>
@@ -121,4 +121,18 @@
       </plugin>
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <show>public</show>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
 </project>

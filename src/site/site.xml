@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 https://maven.apache.org/xsd/decoration-1.8.0.xsd"
+         name="Queue" combine.self="merge">
+
+    <body>
+        <menu name="Project Documentation">
+            <item href="project-info.html" name="Project Information">
+                <item href="dependencies.html" name="Dependencies" />
+                <item href="dependency-info.html" name="Dependency Information" />
+                <item href="plugin-management.html" name="Plugin Management" />
+                <item href="about.html" name="About" />
+                <item href="plugins.html" name="Plugins" />
+                <item href="summary.html" name="Summary" />
+                <item href="team.html" name="Team" />
+            </item>
+            <item href="project-reports.html" name="Project Reports">
+                <item href="apidocs/index.html" name="Javadoc" />
+                <item href="testapidocs/index.html" name="Test Javadoc" />
+            </item>
+            <item href="queue.html" name="Queue" />
+        </menu>
+    </body>
+
+</project>
