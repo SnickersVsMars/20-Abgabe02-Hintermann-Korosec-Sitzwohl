@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Testing Queue with string implementation")
+@DisplayName("Testing StringQueue with string implementation")
 public class StringQueueTest {
     private StringQueue sqSm, sqLg;
 
