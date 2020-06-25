@@ -9,6 +9,8 @@
   <version>1.1</version>
 
   <name>Queue</name>
+  <description>Queue project for the second assignment of the "Software Configuration Management" course
+    at FH Joanneum, Summer Semester 2020</description>
   <url>https://github.com/SnickersVsMars/20-Abgabe02-Hintermann-Korosec-Sitzwohl</url>
 
   <developers>
