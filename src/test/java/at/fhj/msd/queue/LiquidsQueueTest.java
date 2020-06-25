@@ -9,12 +9,22 @@ import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class testing the functionalities of the generic Queue class with Liquids
+ *
+ * @author      Tobias Hintermann
+ * @version     %I%, %G%
+ * @since       1.0
+ */
 @DisplayName("Testing generic Queue with Liquids")
 public class LiquidsQueueTest {
 
     private Queue<Liquid> queue;
     private Liquid water, wine, juice;
 
+    /**
+     * Inits a Queue and three liquids for each test
+     */
     @BeforeEach
     void setUp() {
         queue = new Queue<Liquid>(2);
@@ -24,6 +34,9 @@ public class LiquidsQueueTest {
         juice = new Liquid("Juice",1,0);
     }
 
+    /**
+     * Tests maxSize via adding three liquids to the queue while maxSize is set to two
+     */
     @Test
     @DisplayName("Testing if maximum works properly")
     void testOfferMaximumReached() {
@@ -34,6 +47,9 @@ public class LiquidsQueueTest {
                 "Expected \"false\" but element got added!");
     }
 
+    /**
+     * Tests offer() via adding one liquid to queue
+     */
     @Test
     @DisplayName("Testing if offer()-ing works properly")
     void testOfferSimpleAdd() {
@@ -43,6 +59,9 @@ public class LiquidsQueueTest {
                 "Expected \"true\" but element was not added!");
     }
 
+    /**
+     * Tests poll() via adding two liquids and poll()-ing one
+     */
     @Test
     @DisplayName("Testing if poll()-ing an element works properly")
     void testSimplePoll() {
@@ -58,6 +77,9 @@ public class LiquidsQueueTest {
                 "Expected alcohol percent to be \"13\" but was:" + queue.peek().getAlcoholPercent());
     }
 
+    /**
+     * Tests poll() via poll()-ing an empty queue
+     */
     @Test
     @DisplayName("Testing poll() when queue empty")
     void testPollButNoElement() {
@@ -65,6 +87,9 @@ public class LiquidsQueueTest {
                 "Expected to be \"null\" but queue was not empty!");
     }
 
+    /**
+     * Tests the returned element of poll() via adding one liquid than poll()-ing it
+     */
     @Test
     @DisplayName("Testing returned element of poll()")
     void testReturnedPollElement() {
@@ -79,6 +104,9 @@ public class LiquidsQueueTest {
                 "Expected returned alcohol percent to be \"0\" but was:" + result.getAlcoholPercent());
     }
 
+    /**
+     * Tests remove() via remove()-ing when queue is empty
+     */
     @Test
     @DisplayName("Testing remove() when null, throws NoSuchElementException")
     void testRemoveWhenNull() {
@@ -87,6 +115,9 @@ public class LiquidsQueueTest {
         }, "Expected to throw \"NoSuchElementException\"!");
     }
 
+    /**
+     * Tests remove() via adding two liquids and remove()-ing one
+     */
     @Test
     @DisplayName("Testing remove() from queue")
     void testRemoveWhenNotNull() {
@@ -102,6 +133,9 @@ public class LiquidsQueueTest {
                 "Expected alcohol percent to be \"0\" but was:" + queue.peek().getAlcoholPercent());
     }
 
+    /**
+     * Tests returned element of remove() via adding one liquid than remove()-ing it
+     */
     @Test
     @DisplayName("Testing returned element of remove()")
     void testReturnedRemoveElement() {
@@ -116,6 +150,9 @@ public class LiquidsQueueTest {
                 "Expected returned alcohol percent to be \"0\" but was:" + result.getAlcoholPercent());
     }
 
+    /**
+     * Tests peek() via adding one liquid and peek()-ing all values of it
+     */
     @Test
     @DisplayName("Testing peek() with element in queue")
     void testPeekWithElement() {
@@ -129,6 +166,9 @@ public class LiquidsQueueTest {
                 "Expected alcohol percent to be \"0\" but was:" + queue.peek().getAlcoholPercent());
     }
 
+    /**
+     * Tests peek() via peek()-ing an empty queue
+     */
     @Test
     @DisplayName("Testing peek() with no element")
     void testPeekNoElement() {
@@ -136,6 +176,9 @@ public class LiquidsQueueTest {
                 "Expected to be \"null\" but was not!");
     }
 
+    /**
+     * Tests element() via adding one liquid and comparing all values of the returned liquid
+     */
     @Test
     @DisplayName("Testing element() with elements in queue")
     void testElementWithElement() {
@@ -149,6 +192,9 @@ public class LiquidsQueueTest {
                 "Expected returned alcohol percent to be \"0\" but was:" + queue.element().getAlcoholPercent());
     }
 
+    /**
+     * Tests element() via an empty queue
+     */
     @Test
     @DisplayName("Testing element() with no elements, throws NoSuchElementException")
     void testElementException() {

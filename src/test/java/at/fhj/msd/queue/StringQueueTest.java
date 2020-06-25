@@ -8,16 +8,30 @@ import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Class testing the functionalities of the StringQueue class
+ *
+ * @author      Christian Sitzwohl
+ * @author      Marian Korosec
+ * @version     %I%, %G%
+ * @since       1.0
+ */
 @DisplayName("Testing StringQueue with string implementation")
 public class StringQueueTest {
     private StringQueue sqSm, sqLg;
 
+    /**
+     * Inits two StringQueues with maxSize set to one and five
+     */
     @BeforeEach
     public void setup() {
         sqSm = new StringQueue(1);
         sqLg = new StringQueue(5);
     }
 
+    /**
+     * Tests offer() via offer()-ing a String to an empty queue
+     */
     @Test
     @DisplayName("Testing offer method")
     public void testOfferEmptyQueue() {
@@ -25,6 +39,9 @@ public class StringQueueTest {
                 "Expected offer to return true.");
     }
 
+    /**
+     * Tests maxSize via adding to many Strings to queue
+     */
     @Test
     @DisplayName("Testing offer method with too many offers")
     public void testOfferOverflow() {
@@ -34,6 +51,9 @@ public class StringQueueTest {
                 "Expected offer to return false due to overflow.");
     }
 
+    /**
+     * Tests poll() and its returned String via adding two Strings than poll()-ing them
+     */
     @Test
     @DisplayName("Testing that poll returns and removes the head of the queue")
     public void testPollReturnsAndRemovesHead() {
@@ -52,6 +72,9 @@ public class StringQueueTest {
                 "Expected head to be \"" + testString2 + "\" but was " + result2);
     }
 
+    /**
+     * Tests poll() via poll()-ing an empty queue
+     */
     @Test
     @DisplayName("Testing poll method with empty queue")
     public void testPollEmptyQueue() {
@@ -60,6 +83,9 @@ public class StringQueueTest {
         assertNull(result, "Expected head of empty queue to be null");
     }
 
+    /**
+     * Tests remove() via adding two Strings to queue than remove()-ing them both
+     */
     @Test
     @DisplayName("Testing that remove returns and removes the head of the queue")
     public void testRemoveReturnsAndRemovesHead() {
@@ -78,6 +104,9 @@ public class StringQueueTest {
                 "Expected head to be \"" + testString2 + "\" but was " + result2);
     }
 
+    /**
+     * Tests remove() via remove()-ing when queue is empty
+     */
     @Test
     @DisplayName("Testing remove method with empty queue")
     public void testRemoveEmptyQueue() {
@@ -86,7 +115,9 @@ public class StringQueueTest {
         }, "Expected to throw \"NoSuchElementException\"!");
     }
 
-
+    /**
+     * Tests peek() via peek()-ing an empty queue
+     */
     @Test
     @DisplayName("Testing peek method with empty queue")
     public void testPeekEmptyQueue() {
@@ -94,6 +125,10 @@ public class StringQueueTest {
         assertNull(element, "Expected head to be null but was " + element);
     }
 
+    /**
+     * Tests peek() via adding two Strings than
+     * peek()-ing/remove()-ing one of them prior to comparison
+     */
     @Test
     @DisplayName("Testing peek method multiple times combined with remove")
     public void testPeekWithRemove() {
@@ -111,6 +146,10 @@ public class StringQueueTest {
                 "Expected head to be \"2\" but was " + result4);
     }
 
+    /**
+     * Tests peek() via adding two Strings than peek()-ing/remove()-ing
+     * them until queue is empty
+     */
     @Test
     @DisplayName("Testing peek method multiple times combined with multiple remove")
     public void testPeekWithRemoveMultiple() {
@@ -125,6 +164,11 @@ public class StringQueueTest {
         assertNull(element, "Expected head to be null but was " + element);
     }
 
+    /**
+     * Tests element() via adding two Strings to queue than remove()-ing
+     * one of them and comparing the last one to the returned String of
+     * element()
+     */
     @Test
     @DisplayName("Testing element method multiple times combined with remove")
     public void testElementWithRemove() {
@@ -142,6 +186,10 @@ public class StringQueueTest {
                 "Expected head to be \"2\" but was " + result4);
     }
 
+    /**
+     * Tests element() via adding two Strings than element()-ing/remove()-ing
+     * them until queue is empty
+     */
     @Test
     @DisplayName("Testing element method multiple times combined with multiple removes")
     public void testElementWithMultipleRemove() {

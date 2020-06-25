@@ -27,7 +27,7 @@ public class SimpleDrinkTest {
         dN = new SimpleDrink("Apple Juice", new Liquid("Juice", 0.3, 0));
     }
 
-    /**h
+    /**
      * Test constructor of an alcoholic drink
      */
     @Test
