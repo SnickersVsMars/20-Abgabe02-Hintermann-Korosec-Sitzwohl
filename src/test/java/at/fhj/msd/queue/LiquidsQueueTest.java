@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author      Tobias Hintermann
  * @version     %I%, %G%
- * @since       1.0
+ * @since       1.1
  */
 @DisplayName("Testing generic Queue with Liquids")
 public class LiquidsQueueTest {

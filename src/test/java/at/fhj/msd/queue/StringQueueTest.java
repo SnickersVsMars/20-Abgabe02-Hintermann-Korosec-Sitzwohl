@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * Class testing the functionalities of the StringQueue class
  *
  * @author      Christian Sitzwohl
- * @author      Marian Korosec
+ * @author      Marian Korošec
  * @version     %I%, %G%
- * @since       1.0
+ * @since       1.1
  */
 @DisplayName("Testing StringQueue with string implementation")
 public class StringQueueTest {
@@ -40,7 +40,7 @@ public class StringQueueTest {
     }
 
     /**
-     * Tests maxSize via adding to many Strings to queue
+     * Tests maxSize via adding too many Strings to queue
      */
     @Test
     @DisplayName("Testing offer method with too many offers")
@@ -52,7 +52,7 @@ public class StringQueueTest {
     }
 
     /**
-     * Tests poll() and its returned String via adding two Strings than poll()-ing them
+     * Tests poll() and its returned String via adding two Strings, then poll()-ing them
      */
     @Test
     @DisplayName("Testing that poll returns and removes the head of the queue")
