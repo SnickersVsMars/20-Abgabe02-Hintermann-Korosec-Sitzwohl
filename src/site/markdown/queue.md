@@ -10,7 +10,7 @@ There are many examples where a queue is the right choice:
 - task scheduling
 - virtual waiting line for example for ticket sale
 - stock management
-- every other FIFO related task 
+- any other FIFO related task 
 
 ### How to use it?
 A queue should at least contain the methods enqueue and dequeue.
