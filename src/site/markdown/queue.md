@@ -4,7 +4,15 @@
 A queue is used to represent a first-in first-out (FIFO) collection of objects.
 It should be used for tasks where you need first-in, first-out access of items.
 
-### Usage
+### Where to use it?
+There are many examples where a queue is the right choice:
+- music playlist
+- task scheduling
+- virtual waiting line for example for ticket sale
+- stock management
+- every other FIFO related task 
+
+### How to use it?
 A queue should at least contain the methods enqueue and dequeue.
 
 ![](images/queue.jpg)
@@ -97,5 +105,51 @@ public class GenericTest
 ```
 
 ## Test a queue?
+There are several reasonable test cases for a queue:
+
+- Add objects to the queue til max size is reached
+    - check if false is returned by the ```offer()``` method, when max size is reached
+    - example test with queue size of 1:
+  ```java
+  @Test
+  @DisplayName("Testing offer method with too many offers")
+  public void testOfferOverflow() {
+      assertTrue(sqSm.offer("SuccessfulTestString"),
+              "Expected offer to return true.");
+      assertFalse(sqSm.offer("OverflowTestString"),
+              "Expected offer to return false due to overflow.");
+  }
+  ```  
+- Add several objects to the queue and check if the are returned in the same order (fifo) by calling ```poll()``` several times 
+    - Add Test1 und Test2 to queue and check if the are returned in the same way by calling ```poll()``` two times
+ ```java
+      @Test
+      @DisplayName("Testing that poll returns and removes the head of the queue")
+      public void testPollReturnsAndRemovesHead() {
+          String testString1 = "Test1";
+          String testString2 = "Test2";
+  
+          sqLg.offer(testString1);
+          sqLg.offer(testString2);
+  
+          String result1 = sqLg.poll();
+          String result2 = sqLg.poll();
+  
+          assertEquals(testString1, result1,
+                  "Expected head to be \"" + testString1 + "\" but was " + result1);
+          assertEquals(testString2, result2,
+                  "Expected head to be \"" + testString2 + "\" but was " + result2);
+      }
+```
+
+- Add several objects to the queue and check if the last-inserted object is returned by the methods  ```peek()``` or ```element()``` even if the called multiple times
+- Try to call the methods ```poll()```/```remove()``` and ```peek()```/```element()``` respectively on an empty queue
+    - check if null is returned or if an Exception is thrown depending on the implementation of the method
 
 ### Code Coverage
+Code coverage (or test coverage) is a measure used to describe the degree to which the source code of a program is executed while running test cases.
+A program with high code coverage has had more of its source code executed during testing. As a result of this the program has a lower chance of containing undetected bugs compared to a program with low code coverage.
+
+While a code coverage of 100% is not always possible or even recommended this project has reached it.
+This was possible because of the small project size and less code complexity.
+
