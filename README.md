@@ -30,7 +30,7 @@ These following points were/will be handled during this assignment (subject to c
 - [x] Fix implementation issues in template 
 - [x] Add queue implementation with generics
 - [x] Test string implementation
-- [ ] Test generics implementation
+- [x] Test generics implementation
 - [ ] Create site documentation using Maven
 
 [tobi]: https://github.com/fly8899
