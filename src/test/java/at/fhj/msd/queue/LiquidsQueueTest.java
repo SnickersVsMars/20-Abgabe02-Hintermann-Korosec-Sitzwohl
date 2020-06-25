@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Testing generic Queue with Liquids")
-public class QueueTestLiquids {
+public class LiquidsQueueTest {
 
     private Queue<Liquid> queue;
     private Liquid water, wine, juice;
@@ -50,11 +50,11 @@ public class QueueTestLiquids {
         queue.offer(wine);
         queue.poll();
 
-        assertEquals("Wine",queue.peek().getName(),
+        assertEquals("Wine", queue.peek().getName(),
                 "Expected element-name to be \"Wine\" but was:" + queue.peek().getName());
-        assertEquals(0.125,queue.peek().getVolume(),
+        assertEquals(0.125, queue.peek().getVolume(),
                 "Expected volume to be \"0.125\" but was:" + queue.peek().getVolume());
-        assertEquals(13,queue.peek().getAlcoholPercent(),
+        assertEquals(13, queue.peek().getAlcoholPercent(),
                 "Expected alcohol percent to be \"13\" but was:" + queue.peek().getAlcoholPercent());
     }
 
@@ -73,9 +73,9 @@ public class QueueTestLiquids {
 
         assertEquals("Water", result.getName(),
                 "Expected returned element-name to be \"Water\" but was:" + result.getName());
-        assertEquals(0.3,result.getVolume(),
+        assertEquals(0.3, result.getVolume(),
                 "Expected returned volume to be \"0.3\" but was:" + result.getVolume());
-        assertEquals(0,result.getAlcoholPercent(),
+        assertEquals(0, result.getAlcoholPercent(),
                 "Expected returned alcohol percent to be \"0\" but was:" + result.getAlcoholPercent());
     }
 
@@ -84,7 +84,7 @@ public class QueueTestLiquids {
     void testRemoveWhenNull() {
         assertThrows(NoSuchElementException.class, () -> {
             queue.remove();
-        },"Expected to throw \"NoSuchElementException\"!");
+        }, "Expected to throw \"NoSuchElementException\"!");
     }
 
     @Test
@@ -94,11 +94,11 @@ public class QueueTestLiquids {
         queue.offer(juice);
         queue.remove();
 
-        assertEquals("Juice",queue.peek().getName(),
+        assertEquals("Juice", queue.peek().getName(),
                 "Expected name to be \"Juice\" but was:" + queue.peek().getName());
-        assertEquals(1,queue.peek().getVolume(),
+        assertEquals(1, queue.peek().getVolume(),
                 "Expected volume to be \"1\" but was:" + queue.peek().getVolume());
-        assertEquals(0,queue.peek().getAlcoholPercent(),
+        assertEquals(0, queue.peek().getAlcoholPercent(),
                 "Expected alcohol percent to be \"0\" but was:" + queue.peek().getAlcoholPercent());
     }
 
@@ -108,11 +108,11 @@ public class QueueTestLiquids {
         queue.offer(water);
         Liquid result = queue.remove();
 
-        assertEquals("Water",result.getName(),
+        assertEquals("Water", result.getName(),
                 "Expected returned element-name to be \"Water\" but was:" + result.getName());
-        assertEquals(0.3,result.getVolume(),
+        assertEquals(0.3, result.getVolume(),
                 "Expected returned volume to be \"0.3\" but was:" + result.getVolume());
-        assertEquals(0,result.getAlcoholPercent(),
+        assertEquals(0, result.getAlcoholPercent(),
                 "Expected returned alcohol percent to be \"0\" but was:" + result.getAlcoholPercent());
     }
 
@@ -121,11 +121,11 @@ public class QueueTestLiquids {
     void testPeekWithElement() {
         queue.offer(juice);
 
-        assertEquals("Juice",queue.peek().getName(),
+        assertEquals("Juice", queue.peek().getName(),
                 "Expected element-name to be \"Juice\" but was:" + queue.peek().getName());
-        assertEquals(1,queue.peek().getVolume(),
+        assertEquals(1, queue.peek().getVolume(),
                 "Expected volume to be \"1\" but was:" + queue.peek().getVolume());
-        assertEquals(0,queue.peek().getAlcoholPercent(),
+        assertEquals(0, queue.peek().getAlcoholPercent(),
                 "Expected alcohol percent to be \"0\" but was:" + queue.peek().getAlcoholPercent());
     }
 
@@ -154,6 +154,6 @@ public class QueueTestLiquids {
     void testElementException() {
         assertThrows(NoSuchElementException.class, () -> {
             queue.element();
-        },"Expected to throw \"NoSuchElementException\"!");
+        }, "Expected to throw \"NoSuchElementException\"!");
     }
 }
